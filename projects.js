@@ -242,21 +242,36 @@ const PROJECTS = [
     ]
   },
   {
-    id: "fabrication",
-    category: "impact",
-    org: "Shop work",
-    title: "Welding, Laser Cutting & Sketching",
-    summary: "Hands-on fabrication and hand-drawn design work outside the main projects.",
+    id: "steel-truss",
+    category: "research",
+    org: "Statics · Vanderbilt · In progress",
+    title: "Welded Steel Truss",
+    summary: "A steel truss built for my statics class, taken from hand calculations through simulation to physical load testing.",
     points: [
-      "Welded a steel frame, using a fixture to hold the members in place.",
+      "Welded the truss, using a fixture to hold members in alignment.",
+      "Next: load-bearing calculations for member forces and the truss's load capacity.",
+      "Failure-mode analysis to predict where and how the truss will fail.",
+      "Modeling the truss in simulation, then load-testing it and comparing results against the predictions."
+    ],
+    tags: ["Welding", "Statics", "Failure analysis", "Simulation", "Load testing"],
+    images: [
+      ["images/projects/fab-frame.jpg", "Welded steel truss"],
+      ["images/projects/fab-weld.jpg", "Weld close-up"],
+      ["images/projects/fab-fixture.jpg", "Truss on the weld fixture"]
+    ]
+  },
+  {
+    id: "laser-cut-sketching",
+    category: "impact",
+    org: "Other work",
+    title: "Laser Cutting & Sketching",
+    summary: "Smaller design and fabrication pieces outside the main projects.",
+    points: [
       "Designed and laser-cut a slot-together rocket model.",
       "Hand-sketched an exploded view to work through an assembly before CAD."
     ],
-    tags: ["Welding", "Laser cutting", "Sketching"],
+    tags: ["Laser cutting", "Sketching"],
     images: [
-      ["images/projects/fab-frame.jpg", "Welded steel frame"],
-      ["images/projects/fab-weld.jpg", "Weld close-up"],
-      ["images/projects/fab-fixture.jpg", "Frame on the weld fixture"],
       ["images/projects/fab-rocket.jpg", "Laser-cut slot-together rocket"],
       ["images/projects/fab-sketch.jpg", "Hand-drawn exploded view"]
     ]
