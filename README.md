@@ -8,7 +8,6 @@ Plain HTML/CSS/JS. No build step.
 - `styles.css`: design (colors are at the top under `:root`)
 - `script.js`: renders the projects inline, plus the image zoom and mobile menu
 - `images/projects/`: web-optimized photos (about 1600 px max, JPEG)
-- `resume.pdf`: linked from the nav and contact sections
 
 ## Adding a project
 1. Put the images in `images/projects/`. Keep them about 1600 px on the long side.
