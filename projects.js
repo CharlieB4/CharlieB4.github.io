@@ -242,36 +242,21 @@ const PROJECTS = [
     ]
   },
   {
-    id: "steel-truss",
-    category: "research",
-    org: "Statics · Vanderbilt · In progress",
-    title: "Welded Steel Truss",
-    summary: "A steel truss built for my statics class, taken from hand calculations through simulation to physical load testing.",
-    points: [
-      "Welded the truss, using a fixture to hold members in alignment.",
-      "Next: load-bearing calculations for member forces and the truss's load capacity.",
-      "Failure-mode analysis to predict where and how the truss will fail.",
-      "Modeling the truss in simulation, then load-testing it and comparing results against the predictions."
-    ],
-    tags: ["Welding", "Statics", "Failure analysis", "Simulation", "Load testing"],
-    images: [
-      ["images/projects/fab-frame.jpg", "Welded steel truss"],
-      ["images/projects/fab-weld.jpg", "Weld close-up"],
-      ["images/projects/fab-fixture.jpg", "Truss on the weld fixture"]
-    ]
-  },
-  {
-    id: "laser-cut-sketching",
+    id: "fabrication",
     category: "impact",
-    org: "Other work",
-    title: "Laser Cutting & Sketching",
-    summary: "Smaller design and fabrication pieces outside the main projects.",
+    org: "Shop work",
+    title: "Welding, Laser Cutting & Sketching",
+    summary: "Hands-on fabrication and hand-drawn design work, including a welded steel truss for my statics class.",
     points: [
+      "Welded a steel truss for statics, using a fixture to hold members in alignment. In progress: load-bearing calculations, failure-mode analysis and a simulation model, then load-testing the truss and comparing results.",
       "Designed and laser-cut a slot-together rocket model.",
       "Hand-sketched an exploded view to work through an assembly before CAD."
     ],
-    tags: ["Laser cutting", "Sketching"],
+    tags: ["Welding", "Statics", "Laser cutting", "Sketching"],
     images: [
+      ["images/projects/fab-frame.jpg", "Welded steel truss"],
+      ["images/projects/fab-weld.jpg", "Weld close-up"],
+      ["images/projects/fab-fixture.jpg", "Truss on the weld fixture"],
       ["images/projects/fab-rocket.jpg", "Laser-cut slot-together rocket"],
       ["images/projects/fab-sketch.jpg", "Hand-drawn exploded view"]
     ]
