@@ -1,5 +1,6 @@
-// ---------- Footer year ----------
+// ---------- Footer year + project count ----------
 document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("project-count").textContent = PROJECTS.length;
 
 // ---------- Header border on scroll ----------
 const header = document.querySelector(".site-header");
@@ -46,9 +47,9 @@ function toRows(images) {
 
 function mosaic(p, i) {
   return toRows(p.images).map(([row, sum]) => {
-    // Row height cap: 400px, or less if an image is low-res (don't upscale past ~1.6x)
+    // Row height cap: 400px, or less if an image is low-res (don't upscale past ~1.2x)
     const minH = Math.min(...row.map(([[src]]) => (sizes[src] ? sizes[src][1] : 1e4)));
-    const cap = Math.round(Math.min(400, minH * 1.6));
+    const cap = Math.round(Math.min(400, minH * 1.2));
     return `
     <div class="mrow" style="max-width:${Math.round(sum * cap)}px">
       ${row.map(([[src, cap], j, ar]) => `
