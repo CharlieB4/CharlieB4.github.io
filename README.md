@@ -16,7 +16,11 @@ Plain HTML/CSS/JS. No build step.
 3. Optional: trim blank margins off CAD screenshots with `powershell -ExecutionPolicy Bypass -File tools\trim.ps1 images\projects\your-file.jpg`.
 4. Run `powershell -ExecutionPolicy Bypass -File tools\sizes.ps1`. This records image sizes so they display uncropped. If you skip it, the new images are assumed to be 4:3.
 
-## Publishing on GitHub Pages (free)
-1. Create a repo named `<your-username>.github.io` on GitHub.
-2. Upload everything in this folder (except `.claude/`).
-3. The site goes live at `https://<your-username>.github.io` within a minute or two.
+## Hosting
+- Live site: https://charlieb4.github.io (GitHub Pages, deployed from the `main` branch)
+- Repo: https://github.com/CharlieB4/CharlieB4.github.io
+
+To update the site, commit and push to `main`. GitHub Pages rebuilds automatically in about a minute.
+
+## Local preview
+Run `powershell -ExecutionPolicy Bypass -File tools\serve.ps1 -root . -port 8080`, then open http://localhost:8080.
