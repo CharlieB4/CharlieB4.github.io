@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charlie Borchers — Mechanical Engineer</title>
+  <meta name="description" content="Charlie Borchers — mechanical engineering student at Vanderbilt. Field hardware for autonomous heavy machinery, medical soft robotics, and assistive devices.">
+  <meta property="og:title" content="Charlie Borchers — Mechanical Engineer">
+  <meta property="og:description" content="Hardware design, prototyping and testing — from autonomous heavy machinery to medical soft robots.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/projects/rack-deployed.jpg">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main">
+      <a class="logo" href="#top">Charlie Borchers</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="btn btn-small" href="resume.pdf" target="_blank" rel="noopener">Résumé</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero container" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow">Mechanical Engineering · Vanderbilt University</p>
+        <h1>I design, build, and field&#8209;test hardware.</h1>
+        <p class="hero-text">
+          Mechanical engineering student (minors in CS &amp; Math) working across sensor hardware for
+          autonomous heavy machinery, magnetic soft robots for medical procedures, and assistive devices.
+        </p>
+        <dl class="stats">
+          <div><dt>100+</dt><dd>data nodes built from my design</dd></div>
+          <div><dt>20+</dt><dd>worksites running my hardware</dd></div>
+          <div><dt>10</dt><dd>projects below, CAD to field</dd></div>
+          <div><dt>4.00</dt><dd>GPA at Vanderbilt</dd></div>
+        </dl>
+        <div class="hero-meta">
+          <a href="mailto:charles.a.borchers@vanderbilt.edu">charles.a.borchers@vanderbilt.edu</a>
+          <a href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="hero-mosaic">
+        <figure class="hm-a"><img src="images/projects/rack-deployed.jpg" alt="Wheel loader with camera and lidar sensor rack" fetchpriority="high"><figcaption>Sensor rack · Actor Labs</figcaption></figure>
+        <figure class="hm-b"><img src="images/projects/dong-phantom.jpg" alt="Biliary tract phantom on acrylic mount"><figcaption>Biliary phantom · Dong Lab</figcaption></figure>
+        <figure class="hm-c"><img src="images/projects/node-a.jpg" alt="Open data collection node enclosure"><figcaption>Data node · Actor Labs</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- PROJECTS (rendered from projects.js) -->
+    <section class="section container" id="work">
+      <div class="section-head">
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects</h2>
+      </div>
+      <div id="projects"></div>
+    </section>
+
+    <!-- EXPERIENCE + SKILLS -->
+    <section class="section container" id="experience">
+      <div class="section-head">
+        <p class="eyebrow">Background</p>
+        <h2>Experience</h2>
+      </div>
+      <div class="exp-grid">
+        <ol class="timeline">
+          <li>
+            <div class="tl-meta">Aug 2026 — Present</div>
+            <h3>Undergraduate Researcher <span>· Dong Lab, Vanderbilt</span></h3>
+            <ul>
+              <li>Characterized actuation of a magnetic soft robot for intestinal drug delivery across 15+ setups on a ROS-driven 7-DOF arm.</li>
+              <li>Prototyped a resin-printed cystic duct phantom and laser-cut acrylic mount over 4 iterations.</li>
+              <li>Overhauled the magnetic end effector: joystick control and a tracked handheld version, 3–4× better spatial accuracy.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="tl-meta">May — Aug 2026</div>
+            <h3>Hardware Engineering Intern <span>· Actor Labs</span></h3>
+            <ul>
+              <li>Delivered hardware for autonomous heavy-machinery safety and data systems across 20+ contracted sites.</li>
+              <li>4-camera data node (100+ built, 50+ deployed), sensor rack, pneumatic braking, test chamber, flashing station.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="tl-meta">Jun — Aug 2024</div>
+            <h3>Product Design Intern <span>· Nexus Edge</span></h3>
+            <ul>
+              <li>Researched needs with 50+ users; turned findings into ~10 wireframes and Figma prototypes that shaped feature priorities.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="tl-meta">Sep 2025 — Present</div>
+            <h3>Executive Board <span>· Tikkun Olam Makers &amp; Engineers Without Borders</span></h3>
+            <ul>
+              <li>Lead a team of 12 building assistive devices; mechanical lead on an autonomous stormwater sensor module.</li>
+            </ul>
+          </li>
+          <li>
+            <div class="tl-meta">Aug 2021 — May 2025</div>
+            <h3>Design / CAD Lead <span>· FIRST Tech Challenge</span></h3>
+            <ul>
+              <li>Robot mechanical design plus PID, motion profiling and odometry. Regional and international qualifier.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <aside class="side">
+          <div class="edu">
+            <p class="edu-school">Vanderbilt University</p>
+            <p>B.S. Mechanical Engineering<br>Minors in Computer Science &amp; Math</p>
+            <p class="edu-meta">Expected May 2029 · GPA 4.00 / 4.00</p>
+          </div>
+          <div class="skill-group">
+            <h3>CAD &amp; Design</h3>
+            <ul><li>SolidWorks</li><li>Onshape</li><li>Fusion 360</li><li>AutoCAD</li><li>DFM</li><li>Sheet metal</li><li>Figma</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Fabrication</h3>
+            <ul><li>FDM &amp; resin printing</li><li>Laser cutting</li><li>CNC machining</li><li>Welding</li><li>Molding &amp; casting</li><li>Vacuum forming</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Electronics, Software &amp; Test</h3>
+            <ul><li>ROS / ROS2</li><li>Arduino &amp; ESP32</li><li>Raspberry Pi</li><li>Python</li><li>Git</li><li>Thermal / UV / IP / vibration testing</li><li>PID tuning</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section container contact" id="contact">
+      <h2>Let's build something.</h2>
+      <p>Looking for hardware, mechanical and robotics internships.</p>
+      <a class="btn" href="mailto:charles.a.borchers@vanderbilt.edu">charles.a.borchers@vanderbilt.edu</a>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <p>© <span id="year"></span> Charlie Borchers</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- Image lightbox (click any project image) -->
+  <dialog class="lightbox" id="lightbox" aria-label="Enlarged image">
+    <img id="lb-img" alt="">
+    <p id="lb-cap"></p>
+    <button class="lb-prev" aria-label="Previous image">‹</button>
+    <button class="lb-next" aria-label="Next image">›</button>
+  </dialog>
+
+  <script src="image-sizes.js"></script>
+  <script src="projects.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
