@@ -28,7 +28,20 @@ const ratio = (src) => (sizes[src] ? sizes[src][0] / sizes[src][1] : 4 / 3);
 
 // Justified rows: images in a row share one height and keep their own shape (no cropping).
 // The first row holds fewer images so the lead image is large.
-function toRows(images) {
+function toRows(images, spec) {
+  // Manual layout: spec like [2, 2] or [3, { n: 3, height: 150 }] — images per row, optional max row height
+  if (spec) {
+    const rows = [];
+    let k = 0;
+    spec.forEach((r) => {
+      const n = typeof r === "number" ? r : r.n;
+      const row = images.slice(k, k + n).map((im, t) => [im, k + t, ratio(im[0])]);
+      k += n;
+      if (row.length) rows.push([row, row.reduce((s, x) => s + x[2], 0), r.height]);
+    });
+    if (k < images.length) rows.push(...toRows(images.slice(k)).map(([row, s]) => [row.map(([im, j, ar]) => [im, j + k, ar]), s]));
+    return rows;
+  }
   const rows = [];
   let cur = [], sum = 0;
   images.forEach((im, j) => {
@@ -46,10 +59,10 @@ function toRows(images) {
 }
 
 function mosaic(p, i) {
-  return toRows(p.images).map(([row, sum]) => {
-    // Row height cap: 400px, or less if an image is low-res (don't upscale past ~1.2x)
+  return toRows(p.images, p.rows).map(([row, sum, height]) => {
+    // Row height cap: 400px (or the row's own height), less if an image is low-res (don't upscale past ~1.2x)
     const minH = Math.min(...row.map(([[src]]) => (sizes[src] ? sizes[src][1] : 1e4)));
-    const cap = Math.round(Math.min(400, minH * 1.2));
+    const cap = Math.round(Math.min(height || 400, minH * 1.2));
     return `
     <div class="mrow" style="max-width:${Math.round(sum * cap)}px">
       ${row.map(([[src, cap], j, ar]) => `

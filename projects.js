@@ -9,6 +9,7 @@
     points    bullet points
     tags      skills/tools chips
     images    [ ["path", "caption"], ... ]  — the first image is shown largest
+    rows      (optional) images per row, e.g. [2, 2]; { n: 3, height: 140 } makes a row smaller
   After adding images, run tools\sizes.ps1 (see README).
 */
 const PROJECTS = [
@@ -22,19 +23,21 @@ const PROJECTS = [
       "Aluminum-extrusion frame with 3D-printed brackets adjusts to the shape and size of most worksite machines.",
       "Hemispherical-FOV lidar on each corner with adjustable angle and height for safety coverage.",
       "Relay-controlled light bar, driven by an Arduino talking to the onboard computer, signals when the machine is under autonomous control.",
+      "Replaced fragile 3D-printed camera mounts that broke in the field with sheet-metal mounts with two adjustable degrees of freedom.",
       "Designed print-in-place, assembly-free brackets with custom support fins, using less material than auto-generated supports when printing at scale.",
       "Improved deployment speed, machine safety and hardware lifespan over the previous rack."
     ],
-    tags: ["Onshape", "DFM", "3D printing", "Aluminum extrusion", "Arduino"],
+    tags: ["Onshape", "DFM", "3D printing", "Sheet metal", "Aluminum extrusion", "Arduino"],
     images: [
       ["images/projects/rack-deployed.jpg", "Camera + lidar rack deployed on a wheel loader"],
       ["images/projects/rack-a.jpg", "Sensor rack CAD"],
       ["images/projects/rack-vehicle.jpg", "Rack mounted on a vehicle"],
+      ["images/projects/camera-mount.jpg", "Sheet-metal camera mount"],
       ["images/projects/rack-frame.jpg", "Extrusion frame with corner brackets"],
       ["images/projects/rack-layout.jpg", "Full rack layout with wiring, before install"],
       ["images/projects/rack-corner.jpg", "Corner lidar mount + extrusion brackets CAD"],
-      ["images/projects/rack-b.jpg", "DFM: print-in-place support walls"],
-      ["images/projects/rack-b2.jpg", "DFM bracket, second view (CAD)"]
+      ["images/projects/camera-bracket.jpg", "Camera mount bracket CAD"],
+      ["images/projects/rack-b.jpg", "DFM: print-in-place support walls"]
     ]
   },
   {
@@ -50,11 +53,10 @@ const PROJECTS = [
       "Field feedback drove design revisions to mounts, enclosures and cable routing."
     ],
     tags: ["Field installation", "Wiring", "Heavy machinery", "Testing"],
+    rows: [4],
     images: [
-      ["images/projects/field-team.jpg", "Install team with the excavator fleet"],
       ["images/projects/field-install-team.jpg", "Field install at a customer site"],
       ["images/projects/field-excavator-install.jpg", "Installing hardware in an excavator"],
-      ["images/projects/field-loader-install.jpg", "Wheel loader install"],
       ["images/projects/field-ex-rig.jpg", "Electric excavator rig"],
       ["images/projects/field-hv-box.jpg", "Electric excavator high-voltage junction box"]
     ]
@@ -81,24 +83,6 @@ const PROJECTS = [
     ]
   },
   {
-    id: "camera-mounts",
-    category: "industry",
-    org: "Actor Labs",
-    title: "Camera Mounts",
-    summary: "Rugged, adjustable mounts for the data-collection cameras on heavy machinery.",
-    points: [
-      "Replaced fragile 3D-printed camera mounts that broke in the field with sheet-metal mounts.",
-      "Two adjustable degrees of freedom to aim each camera after installation.",
-      "Designed a matching camera housing and machine-side bracket."
-    ],
-    tags: ["Sheet metal", "CAD", "DFM"],
-    images: [
-      ["images/projects/camera-mount.jpg", "Sheet-metal camera mount"],
-      ["images/projects/camera-bracket.jpg", "Camera mount bracket CAD"],
-      ["images/projects/camera-housing.jpg", "Camera housing CAD"]
-    ]
-  },
-  {
     id: "biliary-phantoms",
     category: "research",
     org: "Dong Lab · Vanderbilt",
@@ -115,8 +99,6 @@ const PROJECTS = [
     images: [
       ["images/projects/dong-phantom.jpg", "Biliary phantom on acrylic mount"],
       ["images/projects/dong-phantom-cad.jpg", "Phantom and mount CAD"],
-      ["images/projects/dong-vessels.jpg", "Close-up of the printed ducts"],
-      ["images/projects/dong-phantom-biliary.jpg", "Biliary model on printed pillar supports"],
       ["images/projects/dong-printed-parts.jpg", "Printed resin sections before assembly"],
       ["images/projects/dong-phantom-gi.jpg", "Phantom 2: biliary tract + upper GI"]
     ]
@@ -135,13 +117,12 @@ const PROJECTS = [
       "Joystick → Arduino → stepper driver → rotating magnet → wheeled robot; 3–4× better spatial accuracy."
     ],
     tags: ["Arduino", "Stepper control", "ROS", "Enclosure design"],
+    rows: [2, 2],
     images: [
       ["images/projects/dong-handheld.jpg", "Handheld unit with AprilTags"],
       ["images/projects/dong-arm-phantom.jpg", "7-DOF arm with magnet over the phantom"],
       ["images/projects/dong-enclosure-cad.jpg", "Vented control enclosure CAD"],
-      ["images/projects/dong-electronics.jpg", "Arduino + DM542 stepper driver"],
-      ["images/projects/dong-joystick.jpg", "Joystick on the enclosure lid"],
-      ["images/projects/dong-bench.jpg", "Bench test setup"]
+      ["images/projects/dong-electronics.jpg", "Arduino + DM542 stepper driver"]
     ]
   },
   {
@@ -228,11 +209,11 @@ const PROJECTS = [
       "Wrote open-source documentation covering sourcing, procedures and specifications."
     ],
     tags: ["Human-centered design", "Wiring", "3D printing", "PVC fabrication"],
+    rows: [3, { n: 3, height: 140 }],
     images: [
-      ["images/projects/tom-presentation.jpg", "Presenting the finished devices to the family"],
+      ["images/projects/tom-team.jpg", "Makeathon team with the completed devices"],
       ["images/projects/tom-highchair.jpg", "Adapted high chair prototype"],
       ["images/projects/tom-walker.jpg", "Walker / gait trainer"],
-      ["images/projects/tom-team.jpg", "Makeathon team with the completed devices"],
       ["images/projects/tom-button.jpg", "Go Baby Go: 3D-printed button interface"],
       ["images/projects/tom-killswitch.jpg", "Go Baby Go: relay-based kill switch"],
       ["images/projects/tom-wiring.jpg", "Go Baby Go: modified wiring schematic"]
@@ -253,7 +234,6 @@ const PROJECTS = [
     tags: ["Fusion 360", "Controls", "Structural design"],
     images: [
       ["images/projects/ftc-robot-2.jpg", "Competition robot (team 19896)"],
-      ["images/projects/ftc-robot-photo.jpg", "Robot, side view"],
       ["images/projects/ftc-scissor.jpg", "Scissor lift prototype"],
       ["images/projects/ftc-end-effector.jpg", "End-effector CAD"],
       ["images/projects/ftc-drivetrain.jpg", "Drivetrain assembly CAD"],
