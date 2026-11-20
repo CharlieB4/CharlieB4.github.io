@@ -21,5 +21,11 @@ Plain HTML/CSS/JS. No build step.
 
 To update the site, commit and push to `main`. GitHub Pages rebuilds automatically in about a minute.
 
+## PDF version (for applications that want a document)
+Run `powershell -ExecutionPolicy Bypass -File tools\build-pdf.ps1`.
+It writes `Charlie_Borchers_Portfolio.pdf` (US Letter landscape, about 4.5 MB) from `print.html`, using the same `projects.js` as the site. Rebuild it after updating projects.
+The experience and skills on page 2 are a copy of the ones in `index.html`, so edit both.
+The PDF and `build/` are git-ignored.
+
 ## Local preview
 Run `powershell -ExecutionPolicy Bypass -File tools\serve.ps1 -root . -port 8080`, then open http://localhost:8080.

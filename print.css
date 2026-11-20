@@ -1,0 +1,97 @@
+/* PDF version: US Letter landscape, one section per page. Page = 1056 × 816 CSS px. */
+@page { size: 11in 8.5in; margin: 0; }
+:root {
+  --bg: #fbfbf8; --surface: #ffffff; --surface-2: #f1f1ec;
+  --text: #17191c; --muted: #565a61; --faint: #868a91; --border: #e4e3dc;
+  --accent: #1f7a6d; --accent-soft: rgba(31, 122, 109, 0.09);
+  --head: "DM Sans", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #d9d9d4; }
+body { font-family: var(--body); color: var(--text); font-size: 12.5px; line-height: 1.45; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+h1, h2, h3 { font-family: var(--head); margin: 0; letter-spacing: -0.02em; line-height: 1.12; }
+a { color: var(--accent); text-decoration: none; }
+ul, ol { margin: 0; }
+img { display: block; max-width: 100%; }
+
+.page {
+  width: 1056px; height: 816px; margin: 0 auto 24px; padding: 40px 48px 0;
+  background: var(--bg); position: relative; overflow: hidden;
+  break-after: page; page-break-after: always;
+  display: flex; flex-direction: column;
+}
+.page:last-child { break-after: auto; page-break-after: auto; }
+@media print { html, body { background: var(--bg); } .page { margin: 0; } }
+
+.pfoot {
+  position: absolute; left: 48px; right: 48px; bottom: 18px;
+  display: flex; justify-content: space-between; font-size: 10px; color: var(--faint);
+  border-top: 1px solid var(--border); padding-top: 7px;
+}
+.pfoot a { color: var(--faint); }
+
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+
+/* ---------- Cover ---------- */
+.cover { flex-direction: row; gap: 40px; align-items: center; padding-bottom: 50px; }
+.cover-text { flex: 1 1 0; }
+.cover h1 { font-size: 56px; }
+.tagline { font-family: var(--head); font-size: 22px; font-weight: 600; color: var(--muted); margin: 8px 0 18px; letter-spacing: -0.01em; }
+.intro { font-size: 14.5px; color: var(--muted); margin: 0 0 22px; max-width: 470px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 0 0 24px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stats dt { font-family: var(--head); font-size: 24px; font-weight: 700; }
+.stats dd { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.3; }
+.contact { list-style: none; padding: 0; display: grid; gap: 6px; font-size: 13.5px; }
+.contact span { display: inline-block; width: 74px; color: var(--faint); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.cover-mosaic { flex: 0 0 470px; height: 640px; display: grid; grid-template-columns: 1.15fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
+.cover-mosaic figure { margin: 0; position: relative; border-radius: 10px; overflow: hidden; background: var(--surface-2); }
+.cover-mosaic img { width: 100%; height: 100%; object-fit: cover; }
+.cm-a { grid-row: span 2; }
+
+/* captions (cover + project pages) */
+.cover-mosaic figcaption, .prow figcaption {
+  position: absolute; left: 6px; bottom: 6px; max-width: calc(100% - 12px);
+  background: rgba(15, 17, 16, .74); color: #fff; font-size: 9.5px; font-weight: 500; line-height: 1.25;
+  padding: 3px 7px; border-radius: 5px;
+}
+
+/* ---------- Experience page ---------- */
+.exp-page { display: grid; grid-template-columns: 1fr 330px; gap: 36px; flex: 1; padding-bottom: 50px; }
+.exp-page h2 { font-size: 30px; margin-bottom: 14px; }
+.timeline { list-style: none; padding: 0; }
+.timeline > li { padding: 11px 0; border-top: 1px solid var(--border); }
+.timeline > li:first-child { border-top: 0; padding-top: 0; }
+.tl-meta { color: var(--faint); font-size: 11px; font-weight: 500; }
+.timeline h3 { font-size: 15.5px; margin: 1px 0 4px; }
+.timeline h3 span { color: var(--muted); font-weight: 500; }
+.timeline ul { padding-left: 15px; color: var(--muted); }
+.timeline ul li { margin-bottom: 2px; }
+.timeline ul li::marker, .proj-points li::marker { color: var(--accent); }
+.side { display: flex; flex-direction: column; gap: 9px; }
+.edu, .skill-group, .contents { background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 11px 14px; }
+.edu { border-left: 3px solid var(--accent); }
+.edu p { margin: 0; color: var(--muted); font-size: 12px; }
+.edu .edu-school { font-family: var(--head); font-weight: 700; font-size: 15px; color: var(--text); }
+.edu .edu-meta { color: var(--faint); font-size: 11px; margin-top: 2px; }
+.skill-group h3, .contents h3 { font-size: 12.5px; margin-bottom: 6px; }
+.skill-group ul, .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.skill-group li, .tags li { font-size: 10.5px; font-weight: 500; background: var(--accent-soft); color: var(--accent); padding: 2px 8px; border-radius: 999px; }
+.contents ol { list-style: none; padding: 0; font-size: 11.5px; }
+.contents li { display: flex; gap: 6px; padding: 1px 0; }
+.contents .dots { flex: 1; border-bottom: 1px dotted var(--border); margin-bottom: 4px; }
+.contents li span:last-child { color: var(--faint); }
+
+/* ---------- Project pages ---------- */
+.proj { display: grid; grid-template-columns: 300px 1fr; gap: 34px; flex: 1; min-height: 0; padding-bottom: 50px; }
+.proj-org { display: flex; gap: 9px; font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin: 0 0 8px; }
+.proj-org span { color: var(--faint); letter-spacing: 0; }
+.proj h2 { font-size: 27px; margin-bottom: 10px; }
+.proj-summary { font-size: 13.5px; font-weight: 500; margin: 0 0 12px; }
+.proj-points { padding-left: 15px; color: var(--muted); margin-bottom: 14px; }
+.proj-points li { margin-bottom: 6px; }
+.proj-images { display: flex; flex-direction: column; gap: 8px; }
+.prow { display: flex; gap: 8px; }
+.prow figure { margin: 0; position: relative; height: 100%; border-radius: 8px; overflow: hidden; background: var(--surface-2); flex: none; }
+.prow figure.drawing { background: #fff; outline: 1px solid var(--border); outline-offset: -1px; }
+.prow img { width: 100%; height: 100%; object-fit: cover; }
